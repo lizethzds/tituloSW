@@ -19,8 +19,6 @@
     </dependency>
   </dependencies>
 
-  
-
 
   <build>
 <pluginManagement>
@@ -30,7 +28,22 @@
       <artifactId>jetty-maven-plugin</artifactId>
       <version>9.4.34.v20201102</version>
     </plugin>
+
+
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.6.1</version>
+      <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+      </configuration>
+  </plugin>
+
+
   </plugins>
+
+  
 
 
 

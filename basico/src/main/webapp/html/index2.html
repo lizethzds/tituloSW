@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/basico/src/main/resources/css/styles.css">
+
+    <title>Ingreso</title>
+</head>
+<body>
+    <h1 id="header">Formulario</h1>
+    <form action="" method="" id="formulario1"><br>
+        <label id = "eti">Ingrese sus datos </label><br><br>
+        <input type="text" id="nombre" placeholder="Nombre"><br><br>
+        <input type="text" id="correo" placeholder="Correo"><br><br>
+        <input type="text" id="edad" placeholder="Edad"><br><br>
+
+        <button type="button" id="enviar">Enviar</button>
+    </form>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var bLogin = document.getElementById("enviar")
+        bLogin.addEventListener("click", function () {
+            let n = document.getElementById("nombre").value
+            let c = document.getElementById("correo").value
+            let e = document.getElementById("edad").value
+            let q = new URLSearchParams()
+            q.append("nombre", n)
+            q.append("correo", c)
+            q.append("edad",e)
+            axios.post("http://localhost:4567", {
+                nombre: n,
+                correo: c,
+                edad: e
+            })
+            .then (function (res) {
+               
+                document.getElementById("header").innerHTML = res.data.msj + " " + res.data.usuario
+            })
+            .catch(function (error) {
+                console.log(error)
+            })
+        })
+    </script>
+    
+</body>
+</html>

@@ -7,3 +7,19 @@
 .contenedor{
     background-color:cornflowerblue;
 }
+
+#formulario1{
+    text-align: center;
+    border-color: black;
+    background-color: antiquewhite;
+}
+
+#header{
+    text-align: center;
+    background-color: cadetblue;
+}
+
+#eti{
+    font-weight: bold;
+    font-size: 16px;
+}
