@@ -27,7 +27,7 @@ public class App
 
         System.out.println("...");
 
-        
+
 
         JsonParser parser = new JsonParser();
         JsonElement arbol = parser.parse(req.body());
@@ -35,6 +35,8 @@ public class App
         System.out.println(peticionDelCliente.get("nombre"));
         System.out.println(peticionDelCliente.get("correo"));
         System.out.println(peticionDelCliente.get("edad"));
+
+        String user = peticionDelCliente.get("nombre").getAsString();
 
     }
 }
