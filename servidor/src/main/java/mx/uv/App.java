@@ -25,6 +25,13 @@ public class App
         });
         before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
 
+
+        get("/lizeth", (req,res)-> "Ingresando al sistema con exito");
+
+        post("/", (req,res)){
+            
+        }
+
         System.out.println("...");
 
 
